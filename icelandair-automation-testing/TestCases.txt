@@ -1,0 +1,178 @@
+Test Case #1
+
+1. Enter http://www.icelandair.us
+2. Select your language/counrty u're from (e.g USA)
+3. Select where we fly from (Dallas/Ft Worth)
+4. Select destination point (Helsinki (HEL) Finland)
+5. Select depart and return date (e.g 13.11.2017-23.11.2017)
+6. Select travelers number (e.g 2 adults)
+7. Select flight class (e.g Economy)
+8. Push "Search" button
+	Expected result: There are no suitable flight
+______________________________________________________________________
+
+Test Case #2
+
+1. Enter http://www.icelandair.us
+2. Select your language/counrty u're from (e.g USA)
+3. Select where we fly from (Reykjavik)
+4. Select destination point (Helsinki (HEL) Finland)
+5. Select depart and return date (e.g 13.11.2017-30.11.2017)
+6. Select travelers number (e.g 2 adults + 1 Infant)
+7. Select flight class (e.g Economy Comfort)
+8. Push "Search" button
+	Expected result: Get list of possible flights and 2 warnings:
+	(
+		- The selected date is less then 24 hours before departure
+		- There is no availability for the requested date 13 Nov 2017. The closest available date is on 14 Nov 2017. It is already selected.
+	)
+______________________________________________________________________
+
+Test Case #3
+
+1. Enter http://www.icelandair.us
+2. Select your language/counrty u're from (e.g USA)
+3. Select checkbox "One-way flight"
+4. Select where we fly from (Dallas/Ft Worth)
+5. Select destination point (Helsinki (HEL) Finland)
+6. Select depart date (e.g 13.11.2017)
+7. Select travelers number (e.g 1 adult + 1 children (2-11))
+8. Select flight class (e.g Saga Class)
+9. Push "Search" button
+10. Add the lowest fare ticket to cart
+11. Push button "Continue"
+	Expected result:  Get list of possible flights, choose most suitable flight and proceed to booking page
+
+______________________________________________________________________
+
+Test Case #4
+
+1. Enter http://www.icelandair.us
+2. Select your language/counrty u're from (e.g USA)
+3. Select where we fly from (Anchorages)
+4. Select destination point (London (Heathrow))
+5. Select depart and return date (e.g 13.11.2017-17.11.2017)
+6. Select travelers number (e.g 2 adults)
+7. Select flight class (e.g Economy)
+8. Push "Search" button
+	Expected result: We get list of suitable flights and the lowest fare ticket
+______________________________________________________________________
+
+Test Case #5
+
+1. Enter http://www.icelandair.us
+2. Select your language/counrty u're from (e.g USA)
+3. Select checkbox "One-way flight"
+4. Select where we fly from (New York (KENNEDY))
+5. Select destination point (Reykjavik)
+6. Select depart date (e.g 13.11.2017)
+7. Select travelers number (e.g 1 adult + 1 children (2-11))
+8. Select flight class (e.g Economy Comfort)
+9. Push "Search" button
+	Expected result:  Get list of possible flights
+
+______________________________________________________________________
+
+Test Case #6
+
+1. Enter http://www.icelandair.us
+2. Select your language/counrty u're from (e.g USA)
+3. Select checkbox "Stopover"
+4. Select where we fly from (Chicago)
+5. Select destination point (Reykjavik)
+6. Select stopover city (Reykjavik)
+7. Select destination point (Cleveland)
+8. Select depart date (e.g 13.11.2017)
+9. Select second depart date (e.g 20.11.2017)
+10. Select travelers number (e.g 3 adults)
+11. Select flight class (e.g Economy Comfort)
+12. Push "Search" button
+	Expected result:  There are no such flights available
+
+______________________________________________________________________
+
+Test Case #6
+
+1. Enter http://www.icelandair.us
+2. Select your language/counrty u're from (e.g USA)
+3. Select checkbox "Stopover"
+4. Select where we fly from (Chicago)
+5. Select destination point (Reykjavik)
+6. Select stopover city (Reykjavik)
+7. Select destination point (Cleveland)
+8. Select depart date (e.g 13.11.2017)
+9. Select second depart date (e.g 20.11.2017)
+10. Select travelers number (e.g 3 adults)
+11. Select flight class (e.g Economy Comfort)
+12. Push "Search" button
+	Expected result:  There are no such flights available
+
+______________________________________________________________________
+
+Test Case #7
+
+1. Enter http://www.icelandair.us
+2. Select your language/counrty u're from (e.g USA)
+3. Click "Hotels" button in top menu
+4. Write down city name to the "Destination" textbox (e.g Tokyo)
+5. Select check-in date (e.g 13.11.2017)
+6. Select check-out date (e.g 17.11.2017)
+7. Select "Are you traveling for work" checkbox with value "Yes"
+8. Choose number of rooms in "Rooms" listbox (e.g 1)
+9. Choose number of adults in "Adults" listbox (e.g 2)
+10. Click button "Let's Go"
+11. Sort results by ascending
+12. Click "Select our last available rooms" at the first hotel result
+13. Select number of beds (e.g 2)
+14. Push reserve button and proceed to booking form
+	Expected result: Available hotels at the moment sorted by ascending price, fast and easy hotel room reservation
+
+______________________________________________________________________
+
+Test Case #8
+
+1. Enter http://www.icelandair.us
+2. Select your language/counrty u're from (e.g USA)
+3. Select checkbox "One-way flight"
+4. Select where we fly from (Philadelphia)
+5. Select destination point (Amsterdam)
+6. Select depart date (e.g 12.24.2017)
+7. Select travelers number (e.g 2 adults)
+8. Select flight class (e.g Saga Class)
+9. Push "Search" button
+	Expected result:  Get list of possible flights with one warning
+	(
+		- There is no availability for the requested date 24 Dec 2017. The closest available date is on 23 Dec 2017. It is already selected.
+	)
+
+______________________________________________________________________
+
+Test Case #9
+
+1. Enter http://www.icelandair.us
+2. Select your language/counrty u're from (e.g USA)
+3. Select checkbox "One-way flight"
+4. Select where we fly from (London (Heathrow))
+5. Select destination point (Boston)
+6. Select depart date (e.g 12.01.2017)
+7. Select travelers number (e.g 1 adult + 2 infants)
+8. Select flight class (e.g Economy)
+9. Push "Search" button
+	Expected result:  We got flash attention
+  (
+    - number of infants cannot exceed number of adults
+  )
+______________________________________________________________________
+
+Test Case #10
+
+1. Enter http://www.icelandair.us
+2. Select your language/counrty u're from (e.g USA)
+3. Select top menu tab "Cars"
+4. Write down your liocation to the "Rental Location" textbox (e.g Boston - Logan Intl, US)
+5. Turn chekbox below valuу to true
+6. Selct pick-up date and time(e.g 11.14.2017, 10:00 am)
+7. Select drop-off date (e.g 11.20.2017, 10:00 am)
+8. Push "Search" button
+9. Select most suitable car rental from list
+	Expected result: List of car rentals in chosen location, rental form
