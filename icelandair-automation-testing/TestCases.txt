@@ -5,10 +5,14 @@ Test Case #1
 3. Select where we fly from (Dallas/Ft Worth)
 4. Select destination point (Helsinki (HEL) Finland)
 5. Select depart and return date (e.g 13.11.2017-23.11.2017)
-6. Select travelers number (e.g 2 adults)
+6. Select travelers count (e.g 2 adults)
 7. Select flight class (e.g Economy)
 8. Push "Search" button
-	Expected result: There are no suitable flight
+	Expected result: We get flash error:
+  (
+    Something went wrong.
+    We are sorry for the inconvenience, we encountered an error processing your request.
+  )
 ______________________________________________________________________
 
 Test Case #2
@@ -41,7 +45,7 @@ Test Case #3
 9. Push "Search" button
 10. Add the lowest fare ticket to cart
 11. Push button "Continue"
-	Expected result:  Get list of possible flights, choose most suitable flight and proceed to booking page
+	Expected result:  Get list of possible flights
 
 ______________________________________________________________________
 
@@ -87,8 +91,11 @@ Test Case #6
 10. Select travelers number (e.g 3 adults)
 11. Select flight class (e.g Economy Comfort)
 12. Push "Search" button
-	Expected result:  There are no such flights available
-
+  Expected result: We get flash error:
+  (
+    Something went wrong.
+    We are sorry for the inconvenience, we encountered an error processing your request.
+  )
 ______________________________________________________________________
 
 Test Case #6
@@ -105,8 +112,11 @@ Test Case #6
 10. Select travelers number (e.g 3 adults)
 11. Select flight class (e.g Economy Comfort)
 12. Push "Search" button
-	Expected result:  There are no such flights available
-
+	 Expected result: We get flash error:
+  (
+    Something went wrong.
+    We are sorry for the inconvenience, we encountered an error processing your request.
+  )
 ______________________________________________________________________
 
 Test Case #7
@@ -125,7 +135,7 @@ Test Case #7
 12. Click "Select our last available rooms" at the first hotel result
 13. Select number of beds (e.g 2)
 14. Push reserve button and proceed to booking form
-	Expected result: Available hotels at the moment sorted by ascending price, fast and easy hotel room reservation
+	Expected result: Available hotels at the moment sorted by ascending price
 
 ______________________________________________________________________
 
@@ -175,4 +185,4 @@ Test Case #10
 7. Select drop-off date (e.g 11.20.2017, 10:00 am)
 8. Push "Search" button
 9. Select most suitable car rental from list
-	Expected result: List of car rentals in chosen location, rental form
+	Expected result: List of car rentals in chosen location
