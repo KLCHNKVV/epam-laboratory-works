@@ -23,7 +23,7 @@ describe 'icelandair-selenium-testing' do
     @search.submit
   end
 
-  it 'test case  #2', :test_case_2 => true do
+  it 'test case #2', :test_case_2 => true do
     dates_clear
     @departure.clear
     @departure.send_keys 'Reykjavik'
