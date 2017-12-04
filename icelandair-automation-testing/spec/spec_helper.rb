@@ -1,5 +1,4 @@
 require 'selenium-webdriver'
-require 'touch_action'
 
 DEPART_DATE = (Time.now + 4*24*60*60).strftime('%m %d %Y')
 RETURN_DATE = (Time.now + 14*24*60*60).strftime('%m %d %Y')

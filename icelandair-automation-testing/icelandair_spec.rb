@@ -1,11 +1,11 @@
 require_relative 'spec/spec_helper'
 
 describe 'icelandair-selenium-testing' do
-  before :all do
+  before '@test_case_1' do
     initalize_selenium
   end
 
-  after :all do
+  after '@test_case_1' do
     sleep 10
     @driver.quit
   end
