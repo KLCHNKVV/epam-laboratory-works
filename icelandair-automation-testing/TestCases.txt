@@ -184,5 +184,5 @@ Test Case #10
 6. Selct pick-up date and time(e.g 11.14.2017, 10:00 am)
 7. Select drop-off date (e.g 11.20.2017, 10:00 am)
 8. Push "Search" button
-9. Select most suitable car rental from list
+9. Can select most suitable car rental from list
 	Expected result: List of car rentals in chosen location
