@@ -2,7 +2,10 @@ require 'selenium-webdriver'
 
 DEPART_DATE = (Time.now + 4*24*60*60).strftime('%m %d %Y')
 RETURN_DATE = (Time.now + 14*24*60*60).strftime('%m %d %Y')
-COMFORT_CLASSES = ['Economy', 'Economy Comfort', 'Saga Class']
+COMFORT_CLASSES = {:economy => 'Economy', :comfort => 'Economy Comfort', :saga => 'Saga Class'}
+
+DEPART_CITY = 'Dallas/Ft Worth (DFW) USA'
+RETURN_CITY = 'Helsinki (HEL) Finland'
 
 RSpec.configure do |config|
 
@@ -16,15 +19,6 @@ RSpec.configure do |config|
   end
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
-
-
-  def press_depart_enter
-    @driver.action.send_keys @departure, :return
-  end
-
-  def press_arrive_enter
-    @driver.action.send_keys @departure, :return
-  end
 
   def initalize_selenium
     @driver = Selenium::WebDriver.for :chrome
@@ -69,6 +63,23 @@ RSpec.configure do |config|
   def just_click_anywhere
     sleep 2
     (@driver.find_element :id, 'header').click
+  end
+
+  def set_depart_and_return_points
+    @departure.clear
+    @departure.send_keys DEPART_CITY
+    just_click_anywhere
+    @arrive.clear
+    @arrive.send_keys RETURN_CITY
+    just_click_anywhere
+  end
+
+  def flight_type flight_type
+    flight_type.click
+  end
+
+  def set_comfort_type type
+    @driver.execute_script("arguments[0].innerText = '#{type}'", @select_comfort)
   end
 
 end
