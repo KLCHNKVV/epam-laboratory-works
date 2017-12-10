@@ -43,7 +43,7 @@ describe 'icelandair-selenium-testing' do
     set_depart_and_return_points
     establish_date
     passengers_count 2, 0, 1
-    @driver.execute_script("arguments[0].innerText = '#{COMFORT_CLASSES[1]}'", @select_comfort)
+    set_comfort_type COMFORT_CLASSES[:comfort]
     @search.submit
   end
 
