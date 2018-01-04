@@ -16,6 +16,7 @@ describe 'icelandair-selenium-testing' do
     passengers_count 2, 0, 0
     set_comfort_type COMFORT_CLASSES[:economy]
     @search.submit
+    expect(@driver.title).to include @error_title
   end
 
   it 'test case #2', :test_case_2 => true do
@@ -25,6 +26,7 @@ describe 'icelandair-selenium-testing' do
     passengers_count 2, 0, 1
     set_comfort_type COMFORT_CLASSES[:comfort]
     @search.submit
+    expect(@driver.title).to include @success_title
   end
 
   it 'test case #3', :test_case_3 => true do
@@ -41,7 +43,7 @@ describe 'icelandair-selenium-testing' do
     @depart_date.clear
     flight_type @round_trip
     set_depart_and_return_points
-    establish_date
+    establish_dateT
     passengers_count 2, 0, 1
     set_comfort_type COMFORT_CLASSES[:comfort]
     @search.submit

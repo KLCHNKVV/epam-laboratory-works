@@ -7,6 +7,8 @@ COMFORT_CLASSES = {:economy => 'Economy', :comfort => 'Economy Comfort', :saga =
 DEPART_CITY = 'Dallas/Ft Worth (DFW) USA'
 RETURN_CITY = 'Helsinki (HEL) Finland'
 
+BASE_URL = 'http://www.icelandair.us/'
+
 RSpec.configure do |config|
 
   config.expect_with :rspec do |expectations|
@@ -22,9 +24,10 @@ RSpec.configure do |config|
 
   def initalize_selenium
     @driver = Selenium::WebDriver.for :chrome
-    @driver.navigate.to 'http://www.icelandair.com/'
-    @driver.find_element(:class, 'us').click
+    @driver.navigate.to BASE_URL.freeze
+    @driver.execute_script('return window.stop')
 
+    @driver.title.clear
     @one_way = @driver.find_element :id, 'oneway'
     @round_trip = @driver.find_element(:id, 'return')
     @stopover = @driver.find_element(:id, 'stopover')
@@ -37,6 +40,9 @@ RSpec.configure do |config|
     @adults = @driver.find_element :id, 'ADT'
     @children = @driver.find_element :id, 'CHD'
     @infants = @driver.find_element :id, 'INF'
+
+    @success_title = 'Icelandair-Calendar'
+    @error_title = 'Icelandair-Error'
   end
 
   def dates_clear
